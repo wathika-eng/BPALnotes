@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap'); 
+
+        *{
+          --black: #181515!important; ;
+          --white: #ffffff!important;
+          font-family: 'Source Sans Pro', sans-serif!important;  
+          scroll-behavior: smooth;
+        }
+        .dark-mode {
+            background: var(--black)!important;
+            color: var(--white)!important;
+            
+          }
+
+        .light-mode {
+          background: var(--white)!important;
+          color: var(--black)!important;
+        }
+        .dark-mode#accordionPanelsStayOpenExample{
+          background: var(--black)!important;
+          color: var(--white)!important;
+          
+        }
+        a {
+          font-size: 17px!important;
+        }
+        
+      .light-mode#accordionPanelsStayOpenExample {
+        background: var(--white)!important;
+        color: var(--black)!important;
+      }
+      #toggle-button :after {
+        
+        content: "🔆"!important;
+        cursor: pointer;
+      }
+      #toggle-button :checked :after {
+        content: "🌙"!important;
+      }
+      
+
+        .navbar-toggler {
+          font-size: 20px !important;
+        }
+        .nav-link{
+          display: inline-block!important;
+          
+          font-size: 19px!important;
+        }
+        .nav-link:hover{
+          color: rgb(255, 255, 255)!important;
+        }
+        .dwn{
+          right: 120px !important;
+        }
+        .accordion.accordion-header{
+          content: "&#xF4FA !important";
+        }
+        .accordion-body:hover{
+          background-color: rgba(0, 0, 0,0.1);
+        }
+        #dwn {
+          display: inline!important;
+          vertical-align: 20%!important;
+          margin-left: 87%;
+          content: Downloaded!;
+        }
+        #dwn::after{
+          
+        }
+        #toggle-button{
+          
+          cursor: pointer!important;
+        }
+
+        @media screen and (max-width:500px){
+          #dwn{
+             display:inherit!important;
+             vertical-align: inherit!important;
+             margin-top: -8.5%!important;
+             margin-left: 70% }
+          a {
+            font-size: 17px!important;
+          }
+          .nav-link {
+            color: white!important;
+            font-size: 25px!important;
+          }
+        }
+        #pager{
+          position: relative!important;
+          margin-top: 10px!important;
+          bottom: 0!important;
+          right: 1%!important;
+        }
