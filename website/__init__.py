@@ -12,7 +12,7 @@ from datetime import datetime
 def create_app():
     app = Flask(__name__)
     # Secret key!
-    app.config['SECRET_KEY'] = 'Cindy2017'
+    app.config['SECRET_KEY'] = '******'
     app.config["TEMPLATES_AUTO_RELOAD"] = True
     # Define DB
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///notes.db'
