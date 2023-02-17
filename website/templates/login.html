@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--------------------------------------------------CSS------------------------------------------------->
+    
+    <link defer rel="stylesheet"  href="{{url_for('static', filename='log.css')}}">
+    <!-----------------------------FONTS------------------------------------------------------->
+    
+
+<!---------------------------------FAVICON---------------------------------------------------------------------->
+
+    
+    <title>Log-In</title>
+</head>
+<body class="env_production notranslate" translate="no" data-theme-suffix="_alx">
+<main>
+  <div id="layout-bars"></div>
+
+    <article class="">
+
+      <div class="logged_out_form">
+
+<h2 class="hbtn_logo"> Log-In here
+</h2>
+
+<form class="sm-gap" id="new_user" action="/auth/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="_dL6erxek3rUqwH2OIGwEcXM0ck4Vo6utBPPJ5l8GEm6ml1Ii4g2zZp9L6rF5-U36wH5ThX9ECnq7VgnS-Mrlw" autocomplete="off">
+
+
+  <div class="field">
+    <label class="control-label" for="user_email">Email</label><br>
+    <input autofocus="autofocus" autocomplete="on" class="form-control" type="text" name="user[email]" id="user_email">
+  </div>
+
+  <div class="field">
+    <label class="control-label" for="user_password">Password</label><br>
+    <input autocomplete="on" class="form-control" type="password" name="user[password]" id="user_password">
+  </div>
+
+    <div class="field">
+      <input name="user[remember_me]" type="hidden" value="0" autocomplete="off"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+      <label class="control-label" for="user_remember_me">Remember me</label>
+    </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Log in" class="btn btn-primary" data-disable-with="Log in">
+  </div>
+</form>
+<ul id="devise_links" class="gap">
+<li>
+    <a href="/auth/password/new">Forgot your password?</a>
+  </li>
+<li>
+    <!--<a href="/auth/unlock/new">Didn&#39;t receive unlock instructions?</a>-->
+  </li>
+<li style="margin-top: 5px;" >
+  <a href="/signup"><bold>Register here!</bold></a>
+</li>
+<!--
+<li>
+  <a href="https://aka.ms/ssprsetup">Forgot your password?</a>
+</li>
+-->
+</ul>
+</div>
+</article>
+</main>
+</body>
+</html>
+{% block content %}
+{% endblock %}
