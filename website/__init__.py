@@ -8,18 +8,21 @@ from datetime import datetime
 # create a database object
 
 
+
+
+
 #create flask app and configure it / DB to models
 def create_app():
     app = Flask(__name__)
     # Secret key!
-    app.config['SECRET_KEY'] = 'Cindy2017'
+    app.config['SECRET_KEY'] = '****************'
     app.config["TEMPLATES_AUTO_RELOAD"] = True
     # Define DB
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///notes.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     #initialize DB    
     #db = SQLAlchemy(app)
- 
+    
  
     
     
@@ -48,8 +51,8 @@ def create_app():
  
 
 #def create_database(app):
-    if not path.exists('website/' + DB_NAME):
-        db.create_all(app=app)
-        print ( 'Database created successfully' )
+    #if not path.exists('website/' + DB_NAME):
+     #   db.create_all(app=app)
+      #  print ( 'Database created successfully' )
 
     

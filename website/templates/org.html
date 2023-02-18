@@ -29,7 +29,9 @@
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
             <div class="accordion-body">
               <strong>Course Outline</strong> 
-              <a id="dwn" class="btn btn-outline-danger" rel="noopener" download="" 
+              <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+              <a id="dwn" class="btn btn-outline-danger" rel="noopener" onclick="move()" download="" 
             href="{{url_for('static', filename='uploads/receipt.pdf')}}">Download</a>
             </div>
           </div>

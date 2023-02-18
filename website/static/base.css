@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap'); 
 
         *{
-          --black: #181515!important; ;
+          --black: #1a1a1a!important; ;
           --white: #ffffff!important;
           font-family: 'Source Sans Pro', sans-serif!important;  
           scroll-behavior: smooth;
@@ -29,14 +29,7 @@
         background: var(--white)!important;
         color: var(--black)!important;
       }
-      #toggle-button :after {
-        
-        content: "🔆"!important;
-        cursor: pointer;
-      }
-      #toggle-button :checked :after {
-        content: "🌙"!important;
-      }
+      
       
 
         .navbar-toggler {
@@ -60,25 +53,33 @@
           background-color: rgba(0, 0, 0,0.1);
         }
         #dwn {
-          display: inline!important;
-          vertical-align: 20%!important;
+          display: inline-block!important;
+          vertical-align: 10%!important;
           margin-left: 87%;
-          content: Downloaded!;
-        }
-        #dwn::after{
           
         }
+        
         #toggle-button{
-          
           cursor: pointer!important;
         }
 
+        #myProgress {
+          display: inline-block;
+          width: 50%;
+        }
+        
+        #myBar {
+          height: 10px;
+          background-color: #4CAF50;
+          width: 0%;
+        }
+        
         @media screen and (max-width:500px){
           #dwn{
              display:inherit!important;
              vertical-align: inherit!important;
              margin-top: -8.5%!important;
-             margin-left: 70% }
+             margin-left: 60% }
           a {
             font-size: 17px!important;
           }
@@ -93,3 +94,64 @@
           bottom: 0!important;
           right: 1%!important;
         }
+        .background {
+          background: linear-gradient(45deg, #003366, #4CAF50);
+          height: 100vh;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+        .button-container {
+          display: inline-flex;
+          flex-direction: column;
+        }
+        
+        .button-row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .zoom-button {
+          background-color: #ffffff;
+          color: #000000;
+          border: none;
+          padding: 10px 20px;
+          margin: 10px;
+          right: 10px;
+          font-size: 20px;
+          text-align: center;
+          font-weight: bolder;
+          border-radius: 50px;
+          transition: transform 0.3s ease-in-out;
+        }
+        a{
+          text-decoration: none;
+        }
+        .zoom-button:hover {
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+        #sem{
+          background-color: #ffffff;
+          color: #000000;
+          border: none;
+          padding: 10px 20px;
+          margin: 10px;
+          font-size: 20px;
+          text-align: center;
+          font-weight: bolder;
+          border-radius: 10px;
+          transition: transform 0.3s ease-in-out;
+          margin-top: -20px!important;
+          justify-content: center!important;
+          width: 100%;
+        }
+        #sem:hover{
+          background-color: rgb(6, 6, 105);
+          font-weight: bolder;
+          color: whitesmoke;
+          
+        }
+        

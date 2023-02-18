@@ -5,7 +5,7 @@ from os import path
 views = Blueprint('views', __name__)
 
 #create views
-@views.route('/')
+@views.route("/")
 def home():
     return render_template('home.html')
 
@@ -20,20 +20,16 @@ def first():
 
 @views.route("/BPAL 2nd year")
 def second():
-    return render_template('2nd.html')
+    return render_template('2ndhome.html')
 
 @views.route("/BPAL 3rd year")
 def third():
-    return render_template('3rd.html')
-
-#@views.route("/BPAL 1st year")
-#def fourth():
-    return render_template('1st.html')
+    return render_template('3rdhome.html')
 
 #4thyr
-@views.route("/BPAL 4th year")
-def bpal():
-    return render_template('4th.html', title="BPAL" )
+@views.route("/research")
+def resea():
+    return render_template('research.html')
 
 
 @views.route("/pfm")
