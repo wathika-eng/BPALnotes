@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@microsoft/applicationinsights-web": "^2.8.10",
+    "@microsoft/applicationinsights-web-basic": "^2.8.10"
+  }
+}
