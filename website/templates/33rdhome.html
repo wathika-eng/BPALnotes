@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+
+<div class="background">
+    <div class="button-container">
+        <a href="/org" class="zoom-button">Public Policy</a>
+        <a href="/pfm" class="zoom-button">Public Sector Economics</a>
+        <a href="/research" class="zoom-button">Operations Management</a>
+        <a href="/corp" class="zoom-button">Public & Private Procurement</a>
+        <a href="/marketing" class="zoom-button">Devolved Govt. Financing</a>
+        <a href="/egov" class="zoom-button">International Relations</a>
+        <a href="/crm" class="zoom-button">TQM</a>
+</div>
+
+{% block footer %}
+{% endblock%}
+
+{% endblock%}

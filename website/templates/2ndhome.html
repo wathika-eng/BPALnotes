@@ -1,31 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<link rel="stylesheet" href="/website/static/base.css">
+<link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
 
 <a href="" id="sem" >
-  <span>Semester 3.1</span></a>
+  <span>Semester 2.1</span></a>
+
 <div class="background">
     
     <div class="button-container">
-        <a href="/org" class="zoom-button">Managing Conflict in Organizations</a>
-        <a href="/pfm" class="zoom-button">Principles of Marketing</a>
-        <a href="/research" class="zoom-button">Financial Accounting II</a>
-        <a href="/corp" class="zoom-button">General Economics</a>
-        <a href="/marketing" class="zoom-button">Management Math II</a>
-        <a href="/egov" class="zoom-button">Administrative Law I</a>
-        <a href="/crm" class="zoom-button">Business Statistics</a>
+        <a href="/" class="zoom-button">Managing Conflict in Organizations</a>
+        <a href="/" class="zoom-button">Principles of Marketing</a>
+        <a href="/" class="zoom-button">Financial Accounting II</a>
+        <a href="/" class="zoom-button">General Economics</a>
+        <a href="/" class="zoom-button">Management Math II</a>
+        <a href="/" class="zoom-button">Administrative Law I</a>
+        <a href="/" class="zoom-button">Business Statistics</a>
     </div>
-  
-
-  <div class="button-container">
-    <a href="/org" class="zoom-button">Managing Conflict in Organizations</a>
-    <a href="/pfm" class="zoom-button">Principles of Marketing</a>
-    <a href="/research" class="zoom-button">Financial Accounting II</a>
-    <a href="/corp" class="zoom-button">General Economics</a>
-    <a href="/marketing" class="zoom-button">Management Math II</a>
-    <a href="/egov" class="zoom-button">Administrative Law I</a>
-    <a href="/crm" class="zoom-button">Business Statistics</a>
- </div>
 </div>
 {% endblock%}
