@@ -1,5 +1,5 @@
 from flask import Blueprint, send_file
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, json, jsonify, make_response, send_from_directory
 from os import path
 
 views = Blueprint('views', __name__)
@@ -93,3 +93,47 @@ def download_file():
 	#path = "simple.docx"
 	#path = "sample.txt"
 	return send_file(path, as_attachment=True)
+
+@views.route('/manifest.json')
+def manifest():
+    return jsonify(manifest.json)
+
+from flask import make_response, send_from_directory
+@views.route('/serviceworker.js')
+def sw():
+    response=make_response(
+                    send_file('static','templates/service.js'))
+    #change the content header file. Can also omit; flask will handle correctly.
+    response.headers['Content-Type'] = 'application/javascript'
+    return response
+
+#########################3RD YR#############################################
+@views.route("/MIS")
+def mis():
+    return render_template('mis.html')
+
+@views.route("/negotiation")
+def negotiation():
+    return render_template('n&n.html')
+
+@views.route("/evolution")
+def evol():
+    return render_template('evol.html')
+
+@views.route("/PM")
+def pm():
+    return render_template('PM.html')
+
+@views.route("/HRM")
+def hrm():
+    return render_template('hrm.html')
+
+@views.route("/costaccounting")
+def ca():
+    return render_template('c&m.html')
+
+@views.route("/strategic")
+def sm():
+    return render_template('sm.html')
+
+#############################3.2############################################

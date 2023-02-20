@@ -5,6 +5,7 @@
           --white: #ffffff!important;
           font-family: 'Source Sans Pro', sans-serif!important;  
           scroll-behavior: smooth;
+          
         }
         .dark-mode {
             background: var(--black)!important;
@@ -86,11 +87,13 @@
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: center;
+          justify-content: space-evenly;
         }
         .button-container {
           display: inline-flex;
           flex-direction: column;
+          position: relative;
+          bottom: 7%!important;
         }
         
         .button-row {
@@ -142,6 +145,7 @@
         }
         
         @media screen and (max-width:500px){
+          
           #dwn{
              display:inherit!important;
              vertical-align: inherit!important;
@@ -163,6 +167,7 @@
             
           }
           .button-container {
+            
             display: inline-flex;
             flex-direction: column;
           }

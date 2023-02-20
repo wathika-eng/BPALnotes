@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<link rel="stylesheet" href="/website/static/base.css">
+<link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
 
 
 <div class="background">
     <div class="button-container">
-        <a href="/org" class="zoom-button">Cost and Management Accounting</a>
-        <a href="/pfm" class="zoom-button">Management Information Systems</a>
-        <a href="/research" class="zoom-button">Evolution of the Kenyan State</a>
-        <a href="/corp" class="zoom-button">Negotiation and Networking</a>
-        <a href="/marketing" class="zoom-button">Project management</a>
-        <a href="/egov" class="zoom-button">Strategic Management</a>
-        <a href="/crm" class="zoom-button">HRM</a>
+        <a href="/costaccounting" class="zoom-button">Cost and Management Accounting</a>
+        <a href="/MIS" class="zoom-button">Management Information Systems</a>
+        <a href="/evolution" class="zoom-button">Evolution of the Kenyan State</a>
+        <a href="/negotiation" class="zoom-button">Negotiation and Networking</a>
+        <a href="/PM" class="zoom-button">Project management</a>
+        <a href="/strategic" class="zoom-button">Strategic Management</a>
+        <a href="/HRM" class="zoom-button">HRM</a>
 </div>
 
 
