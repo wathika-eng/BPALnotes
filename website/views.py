@@ -99,10 +99,10 @@ def manifest():
     return jsonify(manifest.json)
 
 from flask import make_response, send_from_directory
-@views.route('/serviceworker.js')
+@views.route('/service-worker.js')
 def sw():
     response=make_response(
-                    send_file('static','templates/service.js'))
+                    send_from_directory('static','/service-worker.js'))
     #change the content header file. Can also omit; flask will handle correctly.
     response.headers['Content-Type'] = 'application/javascript'
     return response

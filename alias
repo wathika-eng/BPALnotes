@@ -1,0 +1,1 @@
+ff='flask --app app.py --debug run '

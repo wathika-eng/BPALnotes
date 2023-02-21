@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@microsoft/applicationinsights-web": "^2.8.10",
-    "@microsoft/applicationinsights-web-basic": "^2.8.10"
+    "@microsoft/applicationinsights-web-basic": "^2.8.10",
+    "workbox-webpack-plugin": "^6.5.4"
   }
 }
