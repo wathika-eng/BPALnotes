@@ -13,3 +13,5 @@ CTRL+C will stop the application
 1. Lacks a download progress bar
 
 2. Accordion does't turn dark despite dark mode settings
+
+[![Build and deploy Python app to Azure Web App - BPAL](https://github.com/wathika-eng/BPALnotes/actions/workflows/main_bpal.yml/badge.svg)](https://github.com/wathika-eng/BPALnotes/actions/workflows/main_bpal.yml)
