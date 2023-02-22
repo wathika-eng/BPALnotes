@@ -3,11 +3,10 @@ from flask import Flask, url_for, send_file, jsonify, make_response, send_from_d
 from os import path
 from datetime import datetime
 
+
 # database connection details
 
 # create a database object
-
-
 
 
 
@@ -48,7 +47,8 @@ def create_app():
 
 
     return app
- 
+
+
 
 #def create_database(app):
     #if not path.exists('website/' + DB_NAME):

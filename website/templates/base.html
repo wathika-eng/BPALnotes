@@ -137,8 +137,10 @@ function onStateChange(from) {
             </ul>
           </li>
         </ul>
-        <form class="d-flex search" role="search">
-            <input style="width: auto;" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex search" role="search" method="post" action="/search">
+            
+            <input style="width: auto;" name="q" class="form-control me-2" type="search" placeholder="Search"
+             aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         <button style="margin-left: 16px;" data-bs-html="true" id="toggle-button" type="button" onclick="darkmode()" 

@@ -1,6 +1,7 @@
-from flask import Blueprint, send_file
+from flask import Blueprint, send_file, flash, get_flashed_messages, request
 from flask import render_template, redirect, url_for, json, jsonify, make_response, send_from_directory
 from os import path
+
 
 views = Blueprint('views', __name__)
 
@@ -137,3 +138,18 @@ def sm():
     return render_template('sm.html')
 
 #############################3.2############################################
+
+
+
+##############SEARCH###########################
+
+@views.route("/search")
+def post_list():
+    q = request.args.get('q')
+    if q:
+        notes = notes.query.filter(Notes.title.contains(q) |
+                Notes.body.contains(q))
+         
+        notes = notes.query.all()
+        return render_template('base.html', notes=notes)
+    
