@@ -6,21 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--------------------------------------------------CSS------------------------------------------------->
-    <link prefetch href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
-    crossorigin="anonymous">
-    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+   
 
     </script>
-    <style>
-      #buttonDiv{
-        margin-top: 3%!important;
-      }
-    </style>
     <link rel="stylesheet" href="https://flasknotes.blob.core.windows.net/ggggg/log.css">
     <!-----------------------------FONTS------------------------------------------------------->
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+      *{
+        font-family: 'Poppins', sans-serif!important;
+      }
+    </style>
 
 <!---------------------------------FAVICON---------------------------------------------------------------------->
 
@@ -28,12 +26,6 @@
     <title>signup</title>
 </head>
 <body>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong>Page still under-development! </strong>Don't input any information
-    <!---------<button type="button" class="btn-close" data-bs-dismiss="alert" 
-      aria-label="Close"></button>----->
-  </div>
-
   <div id="layout-bars"></div>
 
     <article class="">
@@ -43,29 +35,30 @@
 <h2 class="hbtn_logo"> Register here!
 </h2>
 
-<form class="sm-gap" id="new_user" action="/auth/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="_dL6erxek3rUqwH2OIGwEcXM0ck4Vo6utBPPJ5l8GEm6ml1Ii4g2zZp9L6rF5-U36wH5ThX9ECnq7VgnS-Mrlw" autocomplete="off">
+<form class="sm-gap" id="new_user" action="/upload" accept-charset="UTF-8" ><input type="hidden" name="authenticity_token" value="_dL6erxek3rUqwH2OIGwEcXM0ck4Vo6utBPPJ5l8GEm6ml1Ii4g2zZp9L6rF5-U36wH5ThX9ECnq7VgnS-Mrlw" autocomplete="off">
 <p><h4><b>All fields are required</b></h4></p>
 
   <div class="field">
     <label class="control-label" for="user_email">Email</label><br>
-    <input required autofocus="autofocus" autocomplete="email" class="form-control" type="text" name="user[email]" id="user_email">
+    <input required autofocus="autofocus" autocomplete="email" class="form-control" placeholder="@gmail.com" 
+    type="text" name="user[email]" id="user_email">
   </div>
   <div class="field">
     <label class="control-label" for="user_phone">Phone Number</label><br>
-    <input  required autofocus="autofocus" autocomplete="tel" class="form-control" type="text" name="user[phone]" id="user_phone">
+    <input  required autofocus="autofocus" autocomplete="tel" class="form-control" placeholder="0712345678"
+    type="text" name="user[phone]" id="user_phone">
   </div>
   <div class="field">
     <label class="control-label" for="user_password">Password</label><br>
-    <input required autocomplete="new-password" class="form-control" type="password" name="user[password]" id="user_password">
+    <input id="password" type="password" class="form-control" autofocus name="password" placeholder="strong password"
+    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required data-eye>
   </div>
   <div class="field">
     <label class="control-label" for="user_password">Confirm Password</label><br>
-    <input autocomplete="new-password" class="form-control" required type="password" name="user[password]">
+    <input id="password" autofocus type="password" class="form-control" name="password" placeholder="repeat above password"
+    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required data-eye>
   </div>
-
-   
-
-  <div class="actions">
+<div style="margin-bottom: 4%;" class="actions">
     <input type="submit" name="commit" value="Register" class="btn btn-primary" data-disable-with="Register">
   </div>
 
@@ -124,17 +117,104 @@
           });
           google.accounts.id.renderButton(
             document.getElementById("buttonDiv"),
-            { theme: "outline=danger", size: "large", margin-top "3%" }  // customization attributes
+            { theme: "outline=danger", size: "large", bottom: "3%" }  // customization attributes
           );
           google.accounts.id.prompt(); // also display the One Tap dialog
         }
    </script>
-    <div id="buttonDiv"></div> 
-  </body>
-</html>
-</script>
+     
+<script>
+        /******************************************
+ * My Signup
+ *
+ * 
+ *
+ * @author          Wathika
+ * @uri 			
+ * @copyright       Copyright (c) 2023 Wathika 
+ * @license         
+ * @github          
+ * @version         
+ *
+ * 
+ * 
+ * 
+ ******************************************/
+
+'use strict';
+
+$(function() {
+
+	// author badge :)
+	//var author = '<div style="position: fixed;bottom: 0;right: 20px;background-color: #fff;box-shadow: 0 4px 8px rgba(0,0,0,.05);border-radius: 3px 3px 0 0;font-size: 12px;padding: 5px 10px;">By <a href="https://twitter.com/mhdnauvalazhar">@mhdnauvalazhar</a> &nbsp;&bull;&nbsp; <a href="https://www.buymeacoffee.com/mhdnauvalazhar">Buy me a Coffee</a></div>';
+	//$("body").append(author);
+
+	$("input[type='password'][data-eye]").each(function(i) {
+		var $this = $(this),
+			id = 'eye-password-' + i,
+			el = $('#' + id);
+
+		$this.wrap($("<div/>", {
+			style: 'position:relative',
+			id: id
+		}));
+
+		$this.css({
+			paddingRight: 60
+		});
+		$this.after($("<div/>", {
+			html: 'Show',
+			class: 'btn btn-primary btn-sm',
+			id: 'passeye-toggle-'+i,
+		}).css({
+				position: 'absolute',
+				right: 10,
+				top: ($this.outerHeight() / 2) - 12,
+				padding: '2px 7px',
+				fontSize: 12,
+				cursor: 'pointer',
+		}));
+
+		$this.after($("<input/>", {
+			type: 'hidden',
+			id: 'passeye-' + i
+		}));
+
+		var invalid_feedback = $this.parent().parent().find('.invalid-feedback');
+
+		if(invalid_feedback.length) {
+			$this.after(invalid_feedback.clone());
+		}
+
+		$this.on("keyup paste", function() {
+			$("#passeye-"+i).val($(this).val());
+		});
+		$("#passeye-toggle-"+i).on("click", function() {
+			if($this.hasClass("show")) {
+				$this.attr('type', 'password');
+				$this.removeClass("show");
+				$(this).removeClass("btn-outline-primary");
+			}else{
+				$this.attr('type', 'text');
+				$this.val($("#passeye-"+i).val());				
+				$this.addClass("show");
+				$(this).addClass("btn-outline-primary");
+			}
+		});
+	});
+
+	$(".my-login-validation").submit(function() {
+		var form = $(this);
+        if (form[0].checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+		form.addClass('was-validated');
+	});
+});
 
 </script>
+
 </body>
 </html>
 {% block content %}

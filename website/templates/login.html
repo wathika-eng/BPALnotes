@@ -6,16 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--------------------------------------------------CSS------------------------------------------------->
-    <link prefetch href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
-    crossorigin="anonymous">
-    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    
 
   </script>
     <link rel="stylesheet" href="https://flasknotes.blob.core.windows.net/ggggg/log.css">
     <!-----------------------------FONTS------------------------------------------------------->
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+      *{
+        font-family: 'Poppins', sans-serif!important;
+      }
+    </style>
 
 <!---------------------------------FAVICON---------------------------------------------------------------------->
 
@@ -23,11 +26,6 @@
     <title>Log-In</title>
 </head>
 <body>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong>Page still under-development! </strong>Don't input any information
-    <!---------<button type="button" class="btn-close" data-bs-dismiss="alert" 
-      aria-label="Close"></button>----->
-  </div>
 <main>
   <div id="layout-bars"></div>
 
@@ -38,17 +36,20 @@
 <h2 class="hbtn_logo"> Log-In here
 </h2>
 
-<form class="sm-gap" id="new_user" action="/auth/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="_dL6erxek3rUqwH2OIGwEcXM0ck4Vo6utBPPJ5l8GEm6ml1Ii4g2zZp9L6rF5-U36wH5ThX9ECnq7VgnS-Mrlw" autocomplete="off">
+<form class="sm-gap" id="new_user" action="/upload" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="_dL6erxek3rUqwH2OIGwEcXM0ck4Vo6utBPPJ5l8GEm6ml1Ii4g2zZp9L6rF5-U36wH5ThX9ECnq7VgnS-Mrlw" autocomplete="off">
 
 
   <div class="field">
     <label class="control-label" for="user_email">Email</label><br>
-    <input autofocus="autofocus" autocomplete="email" class="form-control" type="text" name="user[email]" id="user_email">
+    <input autofocus="autofocus" autocomplete="email" class="form-control" type="text" name="user[email]" 
+    id="user_email" required>
   </div>
 
   <div class="field">
-    <label class="control-label" for="user_password">Password</label><br>
-    <input autocomplete="current-password" class="form-control" type="password" name="user[password]" id="user_password">
+    <label aria-autocomplete="both" class="control-label" for="user_password">Password</label><br>
+    <input autocomplete="current-password" class="form-control" type="password"
+    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="user[password]" 
+    id="user_password" data-eye required>
   </div>
 
     <div class="field">
@@ -56,9 +57,25 @@
       <label class="control-label" for="user_remember_me">Remember me</label>
     </div>
 
-  <div class="actions">
+  <div style="margin-bottom: 4%;" class="actions">
     <input type="submit" name="commit" value="Log in" class="btn btn-primary" data-disable-with="Log in">
   </div>
+  <div id="g_id_onload"
+     data-client_id="193300513431-eqjqinjcfh2p0au85db3rae2p16qr10u.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="https://bpal.azurewebsites.net/"
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="pill"
+     data-theme="filled_blue"
+     data-text="continue_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
 </form>
 <ul id="devise_links" class="gap">
 <li>
@@ -79,6 +96,120 @@
 </div>
 </article>
 </main>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+  function handleCredentialResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
+  }
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: "193300513431-eqjqinjcfh2p0au85db3rae2p16qr10u.apps.googleusercontent.com",
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+      document.getElementById("buttonDiv"),
+      { theme: "outline=danger", size: "large", bottom: "3%" }  // customization attributes
+    );
+    google.accounts.id.prompt(); // also display the One Tap dialog
+  }
+</script>
+
+<script>
+  /******************************************
+* My Login
+*
+* 
+*
+* @author          Wathika
+* @uri 			
+* @copyright       Copyright (c) 2023 Wathika
+* @license         
+* @github          
+* @version        
+*
+* 
+* 
+******************************************/
+
+'use strict';
+
+$(function() {
+
+// author badge :)
+//var author = '<div style="position: fixed;bottom: 0;right: 20px;background-color: #fff;box-shadow: 0 4px 8px rgba(0,0,0,.05);border-radius: 3px 3px 0 0;font-size: 12px;padding: 5px 10px;">By <a href="https://twitter.com/mhdnauvalazhar">@mhdnauvalazhar</a> &nbsp;&bull;&nbsp; <a href="https://www.buymeacoffee.com/mhdnauvalazhar">Buy me a Coffee</a></div>';
+//$("body").append(author);
+
+$("input[type='password'][data-eye]").each(function(i) {
+var $this = $(this),
+id = 'eye-password-' + i,
+el = $('#' + id);
+
+$this.wrap($("<div/>", {
+style: 'position:relative',
+id: id
+}));
+
+$this.css({
+paddingRight: 60
+});
+$this.after($("<div/>", {
+html: 'Show',
+class: 'btn btn-primary btn-sm',
+id: 'passeye-toggle-'+i,
+}).css({
+  position: 'absolute',
+  right: 10,
+  top: ($this.outerHeight() / 2) - 12,
+  padding: '2px 7px',
+  fontSize: 12,
+  cursor: 'pointer',
+}));
+
+$this.after($("<input/>", {
+type: 'hidden',
+id: 'passeye-' + i
+}));
+
+var invalid_feedback = $this.parent().parent().find('.invalid-feedback');
+
+if(invalid_feedback.length) {
+$this.after(invalid_feedback.clone());
+}
+
+$this.on("keyup paste", function() {
+$("#passeye-"+i).val($(this).val());
+});
+$("#passeye-toggle-"+i).on("click", function() {
+if($this.hasClass("show")) {
+  $this.attr('type', 'password');
+  $this.removeClass("show");
+  $(this).removeClass("btn-outline-primary");
+}else{
+  $this.attr('type', 'text');
+  $this.val($("#passeye-"+i).val());				
+  $this.addClass("show");
+  $(this).addClass("btn-outline-primary");
+}
+});
+});
+
+$(".my-login-validation").submit(function() {
+var form = $(this);
+  if (form[0].checkValidity() === false) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+form.addClass('was-validated');
+});
+});
+
+</script>
+
 </body>
 </html>
 {% block content %}
