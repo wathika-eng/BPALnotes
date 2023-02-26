@@ -51,6 +51,8 @@ Can run on your default host(e.t.c :5000)
 
 ![bpal azurewebsites net_](https://user-images.githubusercontent.com/71040609/221318721-0938ddc7-7f61-4452-bac9-e9178452f460.png)
 
+Sign-up form
+![image](https://user-images.githubusercontent.com/71040609/221444743-8de99ff3-f02c-4ab6-b48f-c0a22dbb60c7.png)
 
 
 
