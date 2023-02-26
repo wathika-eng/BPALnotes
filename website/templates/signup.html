@@ -12,7 +12,12 @@
     <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
 
-  </script>
+    </script>
+    <style>
+      #buttonDiv{
+        margin-top: 3%!important;
+      }
+    </style>
     <link rel="stylesheet" href="https://flasknotes.blob.core.windows.net/ggggg/log.css">
     <!-----------------------------FONTS------------------------------------------------------->
     
@@ -63,12 +68,30 @@
   <div class="actions">
     <input type="submit" name="commit" value="Register" class="btn btn-primary" data-disable-with="Register">
   </div>
+
 </form>
+<div id="g_id_onload"
+     data-client_id="193300513431-eqjqinjcfh2p0au85db3rae2p16qr10u.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="https://bpal.azurewebsites.net/"
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="pill"
+     data-theme="filled_blue"
+     data-text="continue_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
+
 <ul id="devise_links" class="gap">
 
     <!--<a href="/auth/unlock/new">Didn&#39;t receive unlock instructions?</a>-->
   </li>
-<li style="margin-top: 5px;" >
+<li style="margin-top: 2%;" >
   <P>Already have an account?</P>
   <a href="/login"><bold>Log-In here!</bold></a>
 </li>
@@ -82,6 +105,36 @@
 </article>
 
 
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+      <script>
+        function handleCredentialResponse(response) {
+          console.log("Encoded JWT ID token: " + response.credential);
+        }
+        window.onload = function () {
+          google.accounts.id.initialize({
+            client_id: "193300513431-eqjqinjcfh2p0au85db3rae2p16qr10u.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+          });
+          google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { theme: "outline=danger", size: "large", margin-top "3%" }  // customization attributes
+          );
+          google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+   </script>
+    <div id="buttonDiv"></div> 
+  </body>
+</html>
+</script>
+
+</script>
 </body>
 </html>
 {% block content %}

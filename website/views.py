@@ -10,6 +10,9 @@ views = Blueprint('views', __name__)
 def home():
     return render_template('home.html')
 
+@views.route("/upload")
+def up():
+    return render_template('upload.html')
 ##home##
 @views.route("/error")
 def error():
