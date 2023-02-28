@@ -3,12 +3,6 @@ from website import create_app
 from flask import Flask
 from flask_minify import minify
 
-
-
-
-
-
-
 app = Flask(__name__)
 
 app = create_app()

@@ -217,11 +217,11 @@ def pol():
 
 #@views.route("/search")
 #def post_list():
-    q = request.args.get('q')
-    if q:
-        notes = notes.query.filter(Notes.title.contains(q) |
-                Notes.body.contains(q))
-         
-        notes = notes.query.all()
-        return render_template('base.html', notes=notes)
+#    q = request.args.get('q')
+#    if q:
+#        notes = notes.query.filter(Notes.title.contains(q) |
+#                Notes.body.contains(q))
+#         
+#        notes = notes.query.all()
+#        return render_template('base.html', notes=notes)
     

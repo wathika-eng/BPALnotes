@@ -1,5 +1,5 @@
 from flask import Flask, url_for, send_file, jsonify, make_response
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 from os import path
 from datetime import datetime
 
@@ -19,10 +19,10 @@ def create_app():
         app.config['SECRET_KEY'] = '****************'
         app.config["TEMPLATES_AUTO_RELOAD"] = True
             # Define DB
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+        #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+        #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
             #initialize DB    
-        db = SQLAlchemy(app)
+        #db = SQLAlchemy(app)
             #    from .models import User, Note
         # Models
         #class Profile(db.Model):
