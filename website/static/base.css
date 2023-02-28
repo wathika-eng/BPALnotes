@@ -44,6 +44,13 @@
         .nav-link:hover{
           color: rgb(255, 255, 255)!important;
         }
+        .c{
+          margin-left: .3%;
+          cursor: pointer;
+        }
+        .c:hover{
+          color: purple;
+        }
         .dwn{
           right: 120px !important;
         }
@@ -56,7 +63,7 @@
         #dwn {
           display: inline-block!important;
           vertical-align: 10%!important;
-          margin-left: 87%;
+          margin-left: 90%;
           
         }
         
@@ -144,13 +151,13 @@
           
         }
         
-        @media screen and (max-width:500px){
+        @media screen and (max-width:600px){
           
           #dwn{
              display:inherit!important;
              vertical-align: inherit!important;
              margin-top: -8.5%!important;
-             margin-left: 60% }
+             margin-left: 60%!important; }
           a {
             font-size: 17px!important;
           }

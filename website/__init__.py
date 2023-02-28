@@ -1,5 +1,5 @@
 from flask import Flask, url_for, send_file, jsonify, make_response
-#from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from os import path
 from datetime import datetime
 
@@ -14,20 +14,32 @@ from datetime import datetime
 #create flask app and configure it / DB to models
 def create_app():
         app = Flask(__name__)
+        app.debug = True
             # Secret key!
         app.config['SECRET_KEY'] = '****************'
         app.config["TEMPLATES_AUTO_RELOAD"] = True
             # Define DB
-        #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///notes.db'
-        #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
             #initialize DB    
-        #db = SQLAlchemy(app)
+        db = SQLAlchemy(app)
             #    from .models import User, Note
-        #class User(db.Model, UserMixin):
-         #   id = db.Column(db.Integer, primary_key=True)
-          #  name = db.Column(db.String(50), nullable=False)
-          #  date_added = db.Column(db.DateTime, default=datetime.utcnow)
+        # Models
+        #class Profile(db.Model):
+            # Id : Field which stores unique id for every row in
+            # database table.
+            # first_name: Used to store the first name if the user
+            # last_name: Used to store last name of the user
+            # Age: Used to store the age of the user
+        #    id = db.Column(db.Integer, primary_key=True)
+        #    first_name = db.Column(db.String(20), unique=False, nullable=False)
+        #    last_name = db.Column(db.String(20), unique=False, nullable=False)
+        #    age = db.Column(db.Integer, nullable=False)
         
+            # repr method represents how one object of this datatable
+            # will look like
+        #    def __repr__(self):
+        #        return f"Name : {self.first_name}, Age: {self.age}"
             
             
             #import views

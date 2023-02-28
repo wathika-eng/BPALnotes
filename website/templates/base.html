@@ -3,7 +3,7 @@
 <head>
 {% block head %}
 <!-------------------- Google tag (gtag.js) ---------------------->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SM05336KVZ"></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-SM05336KVZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -98,9 +98,9 @@ function onStateChange(from) {
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
     <div class="container-fluid">
       <a class="navbar-brand " href="#">Class Notes</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      <button autofocus class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span style="color: whitesmoke !important;"><b>Menu</b></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto" style="gap: 1.7px !important;" >
@@ -137,7 +137,7 @@ function onStateChange(from) {
             </ul>
           </li>
         </ul>
-        <form class="d-flex search" role="search" method="post" action="/search">
+        <form class="d-flex search" role="search" method="get" >
             
             <input style="width: auto;" name="q" class="form-control me-2" type="search" placeholder="Search"
              aria-label="Search">
@@ -160,7 +160,8 @@ function onStateChange(from) {
   </nav>
 </section>
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Notes are uploaded weekly. </strong>Keep on checking for updates
+  <strong id="result"> Notes last updated on 01/03/2023
+    </strong>Keep on checking for updates 
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 <!-------------DISABLED ------------------------------------------------------------
@@ -212,8 +213,10 @@ data-size="normal"><div style="width: 304px; height: 78px;"><div><iframe title="
   position: relative;
   width: 100%;
   text-align: center;">
-    <script async >document.write(new Date().getFullYear())</script>© 
-   <!-----------<a class="text-reset fw-bold"  rel="noopener" href="https://github.com/wathika-eng">Contact me</a>------->
+    <script defer>
+    //document.write(new Date().getFullYear())
+    </script> 2023© 
+   <a class="text-reset fw-bold"  rel="noopener" target="_blank" href="https://wathika-eng.github.io/welcomepage/"><span class="c">Contact us</span></a>
   </div>
   {% endblock %}
 </footer>
