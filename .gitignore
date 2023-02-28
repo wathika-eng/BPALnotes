@@ -257,6 +257,7 @@ cython_debug/
 
 
 /venv
+/virtual-environment-wathi
 
 # Serverless directories
 .serverless/
