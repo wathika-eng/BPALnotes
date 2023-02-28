@@ -256,8 +256,8 @@ cython_debug/
 #.idea/
 
 
-/venv
-/virtual-environment-wathi
+#/venv
+#/virtual-environment-wathi
 
 # Serverless directories
 .serverless/

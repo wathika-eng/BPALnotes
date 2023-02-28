@@ -2,7 +2,7 @@ from flask import Flask, url_for, send_file, jsonify, make_response
 #from flask_sqlalchemy import SQLAlchemy
 from os import path
 from datetime import datetime
-
+from flask_minify import minify
 
 
 # database connection details
