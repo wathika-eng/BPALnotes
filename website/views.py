@@ -2,9 +2,13 @@ from flask import Blueprint, send_file, flash, get_flashed_messages, request
 from flask import render_template, redirect, url_for, json, jsonify, make_response, send_from_directory
 from os import path
 from flask_minify import minify, decorators
+from flask_sitemap import Sitemap
 
 
 views = Blueprint('views', __name__)
+
+
+
 
 
 

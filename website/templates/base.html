@@ -3,6 +3,7 @@
 <head>
 {% block head %}
 <!-------------------- Google tag (gtag.js) ---------------------->
+    
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-SM05336KVZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -31,11 +32,17 @@
       crossorigin="anonymous"></script>--->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" 
-    content="Bsc. Public Administration class Notes JKUAT">
+    <meta name="title" content="BPAL class notes JKUAT">
+    <meta name="description" content="A platform where BPAL students from JKUAT,COHRED can get notes for revision purpose. BSC. Public Administration and Leadership">
+    <meta name="keywords" content="BPAL, JKUAT, class, notes, public administration, juja, cohred, ETLM, SOBE, DBA department jkuat">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="8 days">
+    <meta name="author" content="BPAL class rep">
     <meta name="google-site-verification" content="3XoDHZRdVBPFB_OnbMbeCOGh7lQvRDCplIPBNGxmrbM" />
-    <meta name="author" content="Bsc. Public Administration">
-    <link rel="canonical" href="https://bpal.azurewebsites.net/">
+    
+    <link rel="canonical" href="https://bpal.azurewebsites.net/3.2">
     <!-- Add icon library -->
   
     <!--------------------------------------------------CSS------------------------------------------------->
@@ -49,9 +56,9 @@
   <script defer src="{{ url_for('static', filename='js codes/dark.js')}}">
     
   </script>
-
+  
   <!-------------PWA--------------------------------------------------------->
-  <script>     
+  <script defer>     
       navigator.serviceWorker.register("{{url_for('static', filename='service-worker.js')}}").then(onRegistration);
 
 function onRegistration(registration) {
