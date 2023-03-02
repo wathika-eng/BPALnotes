@@ -25,7 +25,7 @@ def up():
 
 ####sitemap
 @views.route("/sitemap.xml")
-def site():
+def sitemap():
     return render_template('sitemap.xml')
 
 @views.route("/robots.txt")
@@ -39,7 +39,7 @@ def error():
     return render_template('404.html')
 
 ##################YEARS OF STUDY#######################################################
-@views.route("/BPAL 1st year")
+@views.route("/BPAL 1st year/")
 @decorators.minify(html=True, js=True, cssless=True)
 def first():
     return render_template('1select.html')
@@ -137,13 +137,12 @@ def marketing():
 	#path = "sample.txt"
 #	return send_file(path, as_attachment=True)
 
-@views.route('/manifest.json')
-def manifest():
-    return jsonify(manifest.json)
 
-from flask import make_response, send_from_directory
-@views.route('/service-worker.js')
-def sw():
+    
+
+#from flask import make_response, send_from_directory
+#@views.route('/service-worker.js')
+#def sw():
     response=make_response(
                     send_from_directory('static','/service-worker.js'))
     #change the content header file. Can also omit; flask will handle correctly.
