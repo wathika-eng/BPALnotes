@@ -6,4 +6,4 @@ Disallow:
 User-agent: *
 Disallow: 
 
-Sitemap: https://bpal.azurewebsites.net//sitemap.xml
+Sitemap: https://bpal.azurewebsites.net/sitemap.xml

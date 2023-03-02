@@ -23,6 +23,15 @@ def home():
 def up():
     return render_template('upload.html')
 
+####sitemap
+@views.route("/sitemap.xml")
+def site():
+    return render_template('sitemap.xml')
+
+@views.route("/robots.txt")
+def robots():
+    return render_template('robots.txt')
+
 ##home##
 @views.route("/error")
 @decorators.minify(html=True, js=True, cssless=True)
