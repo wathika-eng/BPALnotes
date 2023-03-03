@@ -38,6 +38,14 @@ def robots():
 def error():
     return render_template('404.html')
 
+@views.route("/3a77444deaa3460ab5d78f7190debc5d")
+def indexer():
+    return render_template('3a77444deaa3460ab5d78f7190debc5d.txt')
+
+@views.route("/3a77444deaa3460ab5d78f7190debc5d")
+@decorators.minify(html=True, js=True, cssless=True)
+def index():
+    return render_template('index.html')
 ##################YEARS OF STUDY#######################################################
 @views.route("/BPAL 1st year/")
 @decorators.minify(html=True, js=True, cssless=True)
