@@ -3,17 +3,20 @@
 <head>
 {% block head %}
     <meta name="msvalidate.01" content="1C6400DEF4F6787B586DAC272059E0E4" />
-    <script defer type="text/javascript">
+    
+    <script type="text/javascript">
+      //window.addEventListener("consentGranted", () => window.clarity('consent'));
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "g2splfnz6k");
+      
     </script>
-   
+    <script></script>   
 <!-------------------- Google tag (gtag.js) ---------------------->
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SM05336KVZ"></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-SM05336KVZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -38,8 +41,9 @@
     //  }});
       </script>
  <!-----------------GOOGLE-----ADS------(DISABLED)------------------------------------>     
-    <!---<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8318361368777259"
-      crossorigin="anonymous"></script>--->
+    <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8318361368777259"
+      crossorigin="anonymous"></script>
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="BPAL class notes JKUAT">
@@ -103,13 +107,18 @@ function onStateChange(from) {
   <!----<link rel="manifest" href="{{ url_for('static', filename='site.webmanifest' )}}"----->
 
   <!-------------------------START------------------------------------------------> 
-  
+   <style>
+    body.blur{
+    filter: blur(5px);
+    }
+
+   </style>
   <!-------------------------title----------------------------------------------------------------->
   <title>BPAL class Notes</title>
 {% endblock %}
 </head>
 <body> <!-----onclick="resetProgress()"------>
-
+  
 {% block navbar %}
 <section>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -181,6 +190,42 @@ function onStateChange(from) {
     </strong>Keep on checking for updates 
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
+<div id="loader">
+  <div class="loader"></div>
+</div>
+<script>
+  document.body.classList.add('blur');
+  var loader = document.getElementById("loader");
+  window.addEventListener('load', function() {
+  document.body.classList.remove('blur');
+  document.getElementById.remove("loader");
+});
+
+  // Reload the page when the online status changes
+window.addEventListener('online', function() {
+  window.location.reload();
+});
+
+// Reload the page every 10 seconds when offline
+setInterval(function() {
+  if (!navigator.onLine) {
+    window.location.reload();
+  }
+}, 10000);
+
+</script>
+<script>
+  function reloadPage() {
+  setTimeout(function(){
+    if(navigator.onLine){
+      window.location.reload(true);
+    } else {
+      reloadPage(); // If offline, keep retrying until online
+    }
+  }, 3000); // Wait for 3 seconds before attempting to reload the page
+}
+
+</script>
 <!-------------DISABLED ------------------------------------------------------------
 <div class="g-recaptcha" data-sitekey="6LekSCcdAAAAAFtFeN_ZMoyzKdeeK-1LYVVXJe4q" required="" id="id_captcha" 
 data-widget-uuid="22f85e444163400d894bd700f8b1c617" data-callback="onSubmit_22f85e444163400d894bd700f8b1c617" 
